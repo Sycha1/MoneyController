@@ -1,0 +1,192 @@
+body {
+	margin: 0;
+	background-color: rgb(243, 243, 243);
+}
+
+:root {
+	--shadow: 0px 0px 5px -1px rgb(0, 0, 0);
+}
+
+section {
+	display: flex;
+}
+
+.site {
+	position: relative;
+	width: 50vw;
+	height: 100vh;
+}
+
+/* Left */
+
+.left {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/* Operation */
+
+.operation {
+	width: 40px;
+	height: 40px;
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	--PositiveColor: rgb(5, 201, 5);
+	--NegativeColor: red;
+	--AnimationTime: 0.8s;
+}
+
+.operationContent {
+	width: 30px;
+	height: 4px;
+	border-radius: 2px;
+	background-color: var(--NegativeColor);
+	transition: var(--AnimationTime) all;
+}
+
+.operationContent.positive {
+	background-color: var(--PositiveColor);
+}
+
+.operationContent::before {
+	content: " ";
+	margin: 0 auto;
+	width: 30px;
+	height: 4px;
+	display: block;
+	border-radius: 2px;
+	background-color: var(--NegativeColor);
+	transition: var(--AnimationTime) all;
+}
+
+.operationContent.positive::before {
+	transform: translate(0, 1px) rotate(-90deg);
+	background-color: var(--PositiveColor);
+}
+
+/* Input */
+
+.left input {
+	margin: 0 20px;
+	width: 200px;
+	height: 25px;
+	outline: 0;
+	border: 0;
+	border-bottom: 1px solid black;
+	border-radius: 5px;
+}
+
+/* Send button */
+
+.left button {
+	outline: 0;
+	background-color: rgba(0, 0, 0, 0);
+	border: none;
+	z-index: 1;
+	cursor: pointer;
+}
+
+.left button i {
+	font-size: 25px;
+}
+
+/* Budget */
+
+.budget {
+	min-width: 200px;
+	height: 50px;
+	display: flex;
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 30px;
+	box-shadow: var(--shadow);
+	padding: 20px;
+}
+
+.budget .equel {
+	display: inline;
+}
+
+/* Right site */
+
+.right {
+	border-left: 1px solid black;
+	overflow-y: auto;
+}
+
+.rightCnt {
+	display: flex;
+}
+
+.right h1 {
+	padding-right: 30%;
+	text-align: right;
+}
+
+.expenses,
+.income {
+	width: 50%;
+	border-top: 1px solid black;
+	font-size: 20px;
+}
+
+.expenses div {
+	text-align: center;
+	color: red;
+}
+
+.income div {
+	text-align: center;
+	color: rgb(0, 128, 0);
+}
+
+div.elementDescription {
+	margin-right: 20px;
+	color: black;
+}
+
+.element {
+	margin: 20px 2.5%;
+	width: 95%;
+	height: 70px;
+	position: relative;
+	background-color: rgb(238, 238, 238);
+	border-radius: 5px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: 0.5s background-color;
+	box-shadow: var(--shadow);
+}
+
+.element:hover {
+	background-color: rgb(218, 218, 218);
+}
+
+.element:hover .removeButton {
+	opacity: 1;
+	transition: 0.5s 0.2s opacity;
+}
+
+.removeButton {
+	width: 20px;
+	height: 20px;
+	background-color: rgba(0, 0, 0, 0);
+	opacity: 0;
+	outline: 0;
+	border: none;
+	position: absolute;
+	right: 20px;
+	top: 5px;
+	transition: 0.2s opacity;
+}
+
+.right i {
+	font-size: 20px;
+}

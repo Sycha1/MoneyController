@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&family=Raleway:wght@100&display=swap");
+
+body {
+	background-color: rgb(214, 214, 214);
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow-y: hidden;
+}
+
+h1 {
+	font-family: "Dancing Script", cursive;
+	text-align: center;
+	font-size: 30px;
+}
+
+section {
+	width: 800px;
+}
+
+/* classes */
+.inputs {
+	display: flex;
+	justify-content: right;
+}
+
+.inputArea {
+	width: 50%;
+}
+
+.text {
+	width: 25%; /* 25% becouse 2 inputs are 40% of the width so free space = 20% + 5% for appearance */
+	font-size: 20px;
+	text-align: right;
+}
+
+.inputs input {
+	width: 90%;
+	margin: 0;
+	padding: 0;
+	padding-left: 2%;
+	float: right;
+}
+
+/* button and error div */
+.buttonCnt {
+	width: 100%;
+	margin-top: 20px;
+}
+
+.buttonCnt button {
+	width: 20%;
+	height: 30px;
+	float: right;
+	background-color: rgb(238, 158, 9);
+	color: whitesmoke;
+	border: none;
+	border-radius: 6px;
+}
+
+/* appearance for inputs */
+input {
+	height: 30px;
+	border: none;
+	background-color: rgba(255, 255, 255, 0.158);
+	font-family: "Raleway", sans-serif;
+	font-weight: 600;
+	position: relative;
+	letter-spacing: 0.2em;
+	z-index: 1;
+}
+
+.animationCnt {
+	width: 92%;
+	height: 30px;
+	display: block;
+	position: relative;
+	top: -30px;
+	float: right;
+}
+
+.animation {
+	border-top: 1px solid black;
+	border-radius: 50%;
+}
+
+.animationError {
+	border-top: 1px solid red;
+	animation: Error 1s both;
+}
+
+input:focus {
+	outline: none;
+}
+
+@keyframes Error {
+	0% {
+		width: 0%;
+	}
+
+	100% {
+		width: 100%;
+	}
+}
